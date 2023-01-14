@@ -1,51 +1,54 @@
 {% load static %}
 <!doctype html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
     {% block head %}{% endblock %}
     <title>{% block title %}{% endblock %}</title>
 </head>
+
 <body>
 
-<header>
-    <img src="{% static 'img/logo.png' %}" alt="">
-    <h1>Backend-программист</h1>
-</header>
+    <header>
+        <img src="{% static 'img/logo.png' %}" alt="">
+        <h1>Backend-программист</h1>
+    </header>
 
-<main>
-    <nav>
-        <ul>
-            <li>
-                <a href="{% url 'index' %}">О профессии</a>
-            </li>
-            <li>
-                <a href="{% url 'relevance' %}">Востребованность</a>
-            </li>
-            <li>
-                <a href="{% url 'geo' %}">География</a>
-            </li>
-            <li>
-                <a href="{% url 'skills' %}"><span>Навыки</span></a>
-            </li>
-            <li>
-                <a href="{% url 'vacancies' %}"><span>Последние вакансии</span></a>
-            </li>
-        </ul>
-    </nav>
-
-
-    <div class="main">
-        {% block main %}
-        {% endblock %}
-    </div>
-</main>
+    <main>
+        <nav>
+            <ul>
+                <li>
+                    <a href="{% url 'index' %}">О профессии</a>
+                </li>
+                <li>
+                    <a href="{% url 'relevance' %}">Востребованность</a>
+                </li>
+                <li>
+                    <a href="{% url 'geo' %}">География</a>
+                </li>
+                <li>
+                    <a href="{% url 'skills' %}"><span>Навыки</span></a>
+                </li>
+                <li>
+                    <a href="{% url 'vacancies' %}"><span>Последние вакансии</span></a>
+                </li>
+            </ul>
+        </nav>
 
 
-<footer>
-    <span>Хамоян Максим Ираклиевич</span>
-    <span>РИ-210946</span>
-</footer>
+        <div class="main">
+            {% block main %}
+            {% endblock %}
+        </div>
+    </main>
+
+
+    <footer>
+        <span>Хамоян Максим Ираклиевич</span>
+        <span>РИ-210946</span>
+    </footer>
 </body>
+
 </html>

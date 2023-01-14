@@ -2,9 +2,9 @@
 
 
 {% block main %}
-    {{ profession.description | safe }}
-    {% if profession.image %}
-         <img src="{{ profession.image.url }}" alt="">
-    {% endif %}
+{{ profession.description | safe }}
+{% if profession.image %}
+<img src="{{ profession.image.url }}" alt="">
+{% endif %}
 
 {% endblock %}

@@ -4,43 +4,45 @@
 
 
 {% block head %}
-    <link rel="stylesheet" href="{% static 'css/detail.css' %}">
+<link rel="stylesheet" href="{% static 'css/detail.css' %}">
 {% endblock %}
 
 {% block title %}
-    {% if title %}
-        {{ title }}
-    {% endif %}
+{% if title %}
+{{ title }}
+{% endif %}
 {% endblock %}
 {% block main %}
-    <div class="items">
+<div class="items">
     {% for element in data %}
-        <div class="item">
-            <div>
-                <table>
+    <div class="item">
+        <div>
+            <table>
                 <thead>
-                <tr><td colspan="2">{{element.title }} </td></tr>
-                <tr>
-                    {% for head in element.table.head %}
-                        <td>{{ head }}</td>
-                    {% endfor %}
-                    </tr>
-                </thead>
-            <tbody>
-                {% for body in element.table.body %}
                     <tr>
-                        {% for td in body %}
-                            <td>{{ td }}</td>
+                        <td colspan="2">{{element.title }} </td>
+                    </tr>
+                    <tr>
+                        {% for head in element.table.head %}
+                        <td>{{ head }}</td>
                         {% endfor %}
                     </tr>
-                {% endfor %}
+                </thead>
+                <tbody>
+                    {% for body in element.table.body %}
+                    <tr>
+                        {% for td in body %}
+                        <td>{{ td }}</td>
+                        {% endfor %}
+                    </tr>
+                    {% endfor %}
 
-            </tbody>
+                </tbody>
             </table>
-            </div>
-        <div><img src="{{ element.img.url }}" alt=""></div>
         </div>
-        
-    {% endfor %}
+        <div><img src="{{ element.img.url }}" alt=""></div>
     </div>
+
+    {% endfor %}
+</div>
 {% endblock %}
