@@ -1,2 +1,2 @@
 # FinalPythonProject
-Ссылка на сайт:
+Ссылка на сайт: http://maksimyskaurfu.pythonanywhere.com/
